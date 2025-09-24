@@ -7,6 +7,7 @@ const axiosInstance = axios.create({
     "Content-Type": "application/json",
     Authorization: `Bearer ${API_KEY}`,
   },
+  withCredentials: true,
 });
 
 const createNewResume = async (data) => {
