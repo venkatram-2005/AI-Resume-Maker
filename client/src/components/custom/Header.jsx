@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
 import jobsphere from "/jobsphere.png";
 import { Button } from "../ui/button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate  } from "react-router-dom";
 import { logoutUser } from "@/Services/login";
 import { addUserData } from "@/features/user/userFeatures";
+import { useDispatch } from "react-redux";
 
 function Header({ user }) {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
