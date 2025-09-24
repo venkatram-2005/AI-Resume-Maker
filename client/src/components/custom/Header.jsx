@@ -45,7 +45,7 @@ function Header({ user }) {
     <div className="flex justify-between px-6 md:px-10 py-5 shadow-md items-center">
       <img 
         src={jobsphere} 
-        onClick={() => window.location.href = "https://job-sphere-evolved.vercel.app/"}
+        onClick={() => window.open("https://job-sphere-evolved.vercel.app/", "_top")}
         alt="JobSphere Logo" 
         className="w-35 h-9 cursor-pointer" 
       />
