@@ -30,11 +30,26 @@ function ViewResume() {
   const inIframe = window.self !== window.top;
 
   // Fallback share handler
-  const handleCopyLink = () => {
+  const handleCopyLink = async () => {
     const shareUrl = `${import.meta.env.VITE_BASE_URL}/dashboard/view-resume/${resume_id}`;
-    navigator.clipboard.writeText(shareUrl);
-    toast("Link copied to clipboard!");
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      toast("Link copied to clipboard!");
+    } catch (err) {
+      console.error("Clipboard copy failed:", err);
+
+      // fallback if clipboard fails
+      const tempInput = document.createElement("input");
+      tempInput.value = shareUrl;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+
+      toast("Link copied using fallback!");
+    }
   };
+
 
   return (
     <>
