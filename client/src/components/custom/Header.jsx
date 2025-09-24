@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import logo from "/logo.svg";
 import jobsphere from "/jobsphere.png";
 import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
+import { logoutUser } from "@/Services/login";
+import { addUserData } from "@/features/user/userFeatures";
 
 function Header({ user }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -38,7 +39,12 @@ function Header({ user }) {
 
   return (
     <div className="flex justify-between px-6 md:px-10 py-5 shadow-md items-center">
-      <img src={jobsphere} alt="logo" className="w-35 h-9 cursor-pointer" />
+      <img 
+        src={jobsphere} 
+        onClick={() => window.location.href = "https://job-sphere-evolved.vercel.app/"}
+        alt="JobSphere Logo" 
+        className="w-35 h-9 cursor-pointer" 
+      />
 
       {/* Desktop Menu */}
       <div className="hidden md:flex justify-center">
