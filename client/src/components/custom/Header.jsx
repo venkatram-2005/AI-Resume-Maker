@@ -30,10 +30,10 @@ function Header({ user }) {
   const baseUrl = "https://job-sphere-evolved.vercel.app";
 
   const navLinks = [
-    { label: "Explore Jobs", href: "/" },
-    { label: "Create Resume", href: "/resume/create-resume" },
-    { label: "Resume Analyzer", href: "/resume/analyzer" },
-    { label: "Past Experiences", href: "/resume/experiences" },
+    { label: "Explore Jobs", href: `${baseUrl}/` },
+    { label: "Create Resume", href: `${baseUrl}/create-resume` },
+    { label: "Resume Analyzer", href: `${baseUrl}/analyzer` },
+    { label: "Past Experiences", href: `${baseUrl}/experiences` },
   ];
 
   return (
@@ -45,12 +45,12 @@ function Header({ user }) {
         <ul className="list-none flex gap-6">
           {navLinks.map((link, index) => (
             <li key={index}>
-              <Link
-                to={link.href}
+              <a
+                href={link.href}
                 className="text-black hover:text-gray-500 transition duration-300"
               >
                 {link.label}
-              </Link>
+              </a>
             </li>
           ))}
         </ul>
