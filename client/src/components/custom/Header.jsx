@@ -48,6 +48,7 @@ function Header({ user }) {
               <a
                 href={link.href}
                 className="text-black hover:text-gray-500 transition duration-300"
+                target="_top"
               >
                 {link.label}
               </a>
