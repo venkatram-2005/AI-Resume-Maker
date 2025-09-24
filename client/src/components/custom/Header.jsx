@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import logo from "/logo.svg";
 import jobsphere from "/jobsphere.png";
 import { Button } from "../ui/button";
+import { Link } from "react-router-dom";
 
 function Header({ user }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -29,10 +30,10 @@ function Header({ user }) {
   const baseUrl = "https://job-sphere-evolved.vercel.app";
 
   const navLinks = [
-    { label: "Explore Jobs", href: `${baseUrl}/` },
-    { label: "Create Resume", href: `${baseUrl}/create-resume` },
-    { label: "Resume Analyzer", href: `${baseUrl}/analyzer` },
-    { label: "Past Experiences", href: `${baseUrl}/experiences` },
+    { label: "Explore Jobs", href: "/" },
+    { label: "Create Resume", href: "/resume/create-resume" },
+    { label: "Resume Analyzer", href: "/resume/analyzer" },
+    { label: "Past Experiences", href: "/resume/experiences" },
   ];
 
   return (
@@ -44,12 +45,12 @@ function Header({ user }) {
         <ul className="list-none flex gap-6">
           {navLinks.map((link, index) => (
             <li key={index}>
-              <a
-                href={link.href}
+              <Link
+                to={link.href}
                 className="text-black hover:text-gray-500 transition duration-300"
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
