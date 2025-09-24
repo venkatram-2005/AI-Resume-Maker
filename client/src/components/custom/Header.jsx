@@ -18,7 +18,7 @@ function Header({ user }) {
   const handleLogout = async () => {
     try {
       const response = await logoutUser();
-      if (response.statusCode === 200) {
+      if (response.statusCode == 200) {
         dispatch(addUserData(""));
         navigate("/");
       }
@@ -92,7 +92,9 @@ function Header({ user }) {
             <Button
               variant="outline"
               className="bg-blue-600 text-white px-6 sm:px-9 py-2 rounded-full sm:mr-3"
-              onClick={() => (window.location.href = `${baseUrl}/dashboard`)}
+              onClick={() => {
+                navigate("/dashboard");
+              }}
             >
               Dashboard
             </Button>
@@ -104,9 +106,9 @@ function Header({ user }) {
             </Button>
           </>
         ) : (
-          <a href={`${baseUrl}/auth/sign-in`}>
+          <Link to="/auth/sign-in">
             <Button>Get Started</Button>
-          </a>
+          </Link>
         )}
       </div>
     </div>
