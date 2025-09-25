@@ -38,7 +38,7 @@ function App() {
   return (
     <>
       <Provider store={resumeStore}>
-        <Header user={user} />
+        {/* <Header user={user} /> */}
         <Outlet />
         <Toaster />
       </Provider>
