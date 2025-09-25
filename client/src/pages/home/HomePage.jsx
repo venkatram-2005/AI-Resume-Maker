@@ -50,7 +50,7 @@ function HomePage() {
   };
   return (
     <>
-      {/* <Header user={user} /> */}
+      <Header user={user} />
       <section className="pt-10 pb-20 bg-white">
         <div className="px-12 mx-auto max-w-7xl">
         <div className="bg-gradient-to-r from-blue-800 to-blue-900 text-white text-center mx-2 rounded-xl py-16">
