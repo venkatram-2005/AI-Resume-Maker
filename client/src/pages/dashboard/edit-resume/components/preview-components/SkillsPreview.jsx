@@ -9,7 +9,7 @@ function SkillsPreview({ resumeInfo }) {
           <h2 className="text-center font-bold text-sm mb-2" style={{ color: resumeInfo?.themeColor }}>
             Skills
           </h2>
-          <hr style={{ borderColor: resumeInfo?.themeColor }} />
+          <hr className="border-[1.5px] my-2" style={{ borderColor: resumeInfo?.themeColor }} />
         </div>
 
       <div className="space-y-3 mt-4">

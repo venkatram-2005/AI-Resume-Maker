@@ -10,7 +10,7 @@ function CertificationPreview({ resumeInfo }) {
           <h2 className="text-center font-bold text-sm mb-2" style={{ color: resumeInfo?.themeColor }}>
             Certifications
           </h2>
-          <hr style={{ borderColor: resumeInfo?.themeColor }} />
+          <hr className="border-[1.5px] my-2" style={{ borderColor: resumeInfo?.themeColor }} />
         </div>
       )}
 

@@ -17,6 +17,7 @@ function EducationalPreview({ resumeInfo }) {
             style={{
               borderColor: resumeInfo?.themeColor,
             }}
+            className="border-[1.5px] my-2"
           />
         </div>
       )}

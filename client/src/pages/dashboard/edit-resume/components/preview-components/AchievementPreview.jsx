@@ -11,7 +11,7 @@ function AchievementPreview({ resumeInfo }) {
       >
         Achievements
       </h2>
-      <hr style={{ borderColor: resumeInfo?.themeColor }} />
+      <hr className="border-[1.5px] my-2" style={{ borderColor: resumeInfo?.themeColor }} />
 
       <ul className="list-disc pl-5 mt-3 text-sm" style={{ color: resumeInfo?.themeColor }}>
         {resumeInfo.achievements.map((ach, index) => (
