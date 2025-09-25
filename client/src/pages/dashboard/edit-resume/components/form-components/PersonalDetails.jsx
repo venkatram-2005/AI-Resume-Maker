@@ -77,6 +77,7 @@ function PersonalDetails({ resumeInfo, enanbledNext }) {
               defaultValue={resumeInfo?.firstName}
               required
               onChange={handleInputChange}
+              placeholder="John"
             />
           </div>
           <div>
@@ -86,6 +87,7 @@ function PersonalDetails({ resumeInfo, enanbledNext }) {
               required
               onChange={handleInputChange}
               defaultValue={resumeInfo?.lastName}
+              placeholder="Doe"
             />
           </div>
           <div className="col-span-2">
@@ -94,6 +96,7 @@ function PersonalDetails({ resumeInfo, enanbledNext }) {
               name="jobTitle"
               defaultValue={resumeInfo?.jobTitle}
               onChange={handleInputChange}
+              placeholder="Frontend Developer"
             />
           </div>
           <div className="col-span-2">
@@ -103,6 +106,7 @@ function PersonalDetails({ resumeInfo, enanbledNext }) {
               required
               defaultValue={resumeInfo?.address}
               onChange={handleInputChange}
+              placeholder="City, State, Country"
             />
           </div>
           <div>
@@ -112,6 +116,7 @@ function PersonalDetails({ resumeInfo, enanbledNext }) {
               required
               defaultValue={resumeInfo?.phone}
               onChange={handleInputChange}
+              placeholder="+91 9876543210"
             />
           </div>
           <div>
@@ -121,6 +126,7 @@ function PersonalDetails({ resumeInfo, enanbledNext }) {
               required
               defaultValue={resumeInfo?.email}
               onChange={handleInputChange}
+              placeholder="abc@gmail.com"
             />
           </div>
         </div>
