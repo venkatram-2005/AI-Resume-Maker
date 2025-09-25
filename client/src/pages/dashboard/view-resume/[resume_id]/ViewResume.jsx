@@ -7,11 +7,13 @@ import { useDispatch } from "react-redux";
 import { addResumeData } from "@/features/resume/resumeFeatures";
 import { RWebShare } from "react-web-share";
 import { toast } from "sonner";
+import { useNavigate } from "react-router-dom";
 
 function ViewResume() {
   const [resumeInfo, setResumeInfo] = React.useState({});
   const { resume_id } = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchResumeInfo();
@@ -65,6 +67,9 @@ function ViewResume() {
             </p>
             <div className="flex justify-between px-44 my-10">
               <Button onClick={HandleDownload}>Download</Button>
+              <Button onClick={() => navigate("/dashboard")}>
+                DashBoard
+              </Button>
 
               {inIframe ? (
                 <Button onClick={handleCopyLink}>Copy Link</Button>
