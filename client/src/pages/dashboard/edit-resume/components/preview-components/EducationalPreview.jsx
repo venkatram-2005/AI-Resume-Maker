@@ -45,7 +45,7 @@ function EducationalPreview({ resumeInfo }) {
           <div className="text-xs">
             {education?.grade ? `${education?.gradeType} - ${education?.grade}` : null}
           </div>
-          <p className="text-xs my-2">{education?.description}</p>
+          {/* <p className="text-xs my-2">{education?.description}</p> */}
         </div>
       ))}
     </div>

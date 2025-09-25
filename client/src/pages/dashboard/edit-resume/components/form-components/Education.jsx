@@ -144,18 +144,18 @@ function Education({ resumeInfo, enanbledNext }) {
                     type="text"
                     name="grade"
                     onChange={(e) => handleChange(e, index)}
-                    defaultValue={item?.endDate}
+                    defaultValue={item?.grade}
                   />
                 </div>
               </div>
-              <div className="col-span-2">
+              {/* <div className="col-span-2">
                 <label>Description</label>
                 <Textarea
                   name="description"
                   onChange={(e) => handleChange(e, index)}
                   defaultValue={item?.description}
                 />
-              </div>
+              </div> */}
             </div>
           </div>
         ))}

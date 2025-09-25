@@ -61,9 +61,9 @@ function Summary({ resumeInfo, enanbledNext, enanbledPrev }) {
     }
 
     setLoading(true);
-    const PROMPT = `Please rewrite the following summary in 3 different ways, making each version clear, concise, and engaging. Return output as a JSON array with each object containing a "summary" field.
+    const PROMPT = `Please rewrite the following career objective in 3 different ways, making each version clear, concise, and engaging. Return output as a JSON array with each object containing a "summary" field.
 
-Original Summary: "${summary}"`;
+Original Objective: "${summary}"`;
 
     try {
       const result = await AIChatSession.sendMessage(PROMPT);
@@ -82,11 +82,11 @@ Original Summary: "${summary}"`;
     <div>
       <div className="p-5 shadow-lg rounded-lg border-t-primary border-t-4 mt-10">
         <h2 className="font-bold text-lg">Summary</h2>
-        <p>Add or rewrite summary for your job title</p>
+        <p>Add or rewrite objective for your resume</p>
 
         <form className="mt-7" onSubmit={onSave}>
           <div className="flex justify-between items-end">
-            <label>Add Summary</label>
+            <label>Add Objective</label>
             <Button
               variant="outline"
               onClick={RewriteSummaryWithAI}

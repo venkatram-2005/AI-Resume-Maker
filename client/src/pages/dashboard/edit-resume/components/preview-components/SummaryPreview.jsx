@@ -7,7 +7,7 @@ function SummeryPreview({resumeInfo}) {
         className="text-center font-bold text-sm mb-2"
         style={{ color: resumeInfo?.themeColor }}
       >
-        Summary
+        Objective
       </h2>
       <hr className="border-[1.5px] my-2" style={{ borderColor: resumeInfo?.themeColor }} />
 
