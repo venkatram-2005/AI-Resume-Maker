@@ -52,7 +52,7 @@ function ExperiencePreview({ resumeInfo }) {
                     {experience.workSummery}
                 </p> */}
           <div
-            className="text-xs my-2"
+            className="text-xs my-2 list-disc list-outside pl-5"
             dangerouslySetInnerHTML={{ __html: experience?.workSummary }}
           />
         </div>

@@ -38,7 +38,7 @@ function ProjectPreview({ resumeInfo }) {
             )}
           </h2>
           <div
-            className="text-xs my-2"
+            className="text-xs my-2 list-disc list-outside pl-5"
             dangerouslySetInnerHTML={{ __html: project?.projectSummary }}
           />
         </div>
