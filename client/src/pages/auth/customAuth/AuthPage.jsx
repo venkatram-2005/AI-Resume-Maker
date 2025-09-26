@@ -45,7 +45,7 @@ function AuthPage() {
       console.log("Login Completed");
 
       if (user?.statusCode === 200) {
-        navigate("/");
+        navigate("/dashboard");
       }
       console.log(user);
     } catch (error) {
