@@ -12,32 +12,30 @@ function HomePage() {
   const user = useSelector((state) => state.editUser.userData);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const handleClick = () => {
-    window.open(
-      "https://github.com/venkatram-2005",
-      "_blank"
-    );
+    window.open("https://github.com/venkatram-2005", "_blank");
   };
 
   useEffect(() => {
     const fetchResponse = async () => {
       try {
         const response = await startUser();
-        if (response.statusCode == 200) {
+        if (response.statusCode === 200) {
           dispatch(addUserData(response.data));
         } else {
           dispatch(addUserData(""));
         }
       } catch (error) {
         console.log(
-          "Printing from Home Page there was a error ->",
+          "Printing from Home Page there was an error ->",
           error.message
         );
         dispatch(addUserData(""));
       }
     };
     fetchResponse();
-  }, []);
+  }, [dispatch]);
 
   const hadnleGetStartedClick = () => {
     if (user) {
@@ -48,84 +46,85 @@ function HomePage() {
       navigate("/auth/sign-in");
     }
   };
+
   return (
     <>
       <Header user={user} />
-      <section className="pt-10 pb-20 bg-white">
-        <div className="px-12 mx-auto max-w-7xl">
-        <div className="bg-gradient-to-r from-blue-800 to-blue-900 text-white text-center mx-2 rounded-xl py-16">
-          <div className="w-full mx-auto text-left md:w-11/12 xl:w-9/12 md:text-center">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium mb-4">
-              Start{" "}
-              <span className="block w-full py-2 text-transparent bg-clip-text bg-gradient-to-r from-teal-300 via-cyan-400 to-blue-400 lg:inline">
-                building your Resume
-              </span>
-              {" "}
-              for your next Job
-            </h2>
+      <section className="pt-8 pb-16 bg-white">
+        <div className="px-4 sm:px-6 lg:px-12 mx-auto max-w-7xl">
+          {/* Hero Banner */}
+          <div className="bg-gradient-to-r from-blue-800 to-blue-900 text-white text-center rounded-xl py-10 sm:py-16 px-4 sm:px-8">
+            <div className="w-full mx-auto text-center md:w-11/12 xl:w-9/12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold mb-4 leading-snug">
+                Start{" "}
+                <span className="block sm:inline w-full py-1 sm:py-2 text-transparent bg-clip-text bg-gradient-to-r from-teal-300 via-cyan-400 to-blue-400">
+                  building your Resume
+                </span>{" "}
+                for your next Job
+              </h2>
 
-            <p className="mb-8 max-w-xl mx-auto text-sm font-light px-5">
-              Build. Refine. Shine. With AI-Driven Resumes
-            </p>
+              <p className="mb-6 sm:mb-8 max-w-md sm:max-w-xl mx-auto text-sm sm:text-base font-light px-2 sm:px-5">
+                Build. Refine. Shine. With AI-Driven Resumes
+              </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                onClick={hadnleGetStartedClick}
-                className="inline-flex items-center justify-center px-6 py-3 text-sm sm:text-base font-medium text-black rounded-2xl shadow-md transition duration-200 cursor-pointer bg-gradient-to-r from-teal-300 via-cyan-400 to-blue-400 hover:from-teal-400 hover:via-cyan-500 hover:to-blue-500"
-              >
-                Get Started
-                <svg
-                  className="w-4 h-4 ml-2"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+                <a
+                  onClick={hadnleGetStartedClick}
+                  className="w-full sm:w-auto inline-flex items-center justify-center px-5 sm:px-6 py-3 text-sm sm:text-base font-medium text-black rounded-xl sm:rounded-2xl shadow-md transition duration-200 cursor-pointer bg-gradient-to-r from-teal-300 via-cyan-400 to-blue-400 hover:from-teal-400 hover:via-cyan-500 hover:to-blue-500"
                 >
-                  <path
-                    fillRule="evenodd"
-                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
-              </a>
+                  Get Started
+                  <svg
+                    className="w-4 h-4 ml-2"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    ></path>
+                  </svg>
+                </a>
 
-              <a
-                onClick={handleClick}
-                className="inline-flex items-center justify-center px-6 py-3 text-sm sm:text-base font-medium text-gray-800 bg-white hover:bg-gray-100 rounded-2xl shadow-md transition duration-200 cursor-pointer"
-              >
-                Learn More
-                <svg
-                  className="w-4 h-4 ml-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
+                <a
+                  onClick={handleClick}
+                  className="w-full sm:w-auto inline-flex items-center justify-center px-5 sm:px-6 py-3 text-sm sm:text-base font-medium text-gray-800 bg-white hover:bg-gray-100 rounded-xl sm:rounded-2xl shadow-md transition duration-200 cursor-pointer"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                  ></path>
-                </svg>
-              </a>
+                  Learn More
+                  <svg
+                    className="w-4 h-4 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
 
-
-          <div className="w-full mx-auto mt-20 text-center md:w-10/12">
-            <div className="relative z-0 w-full mt-8">
-              <div className="relative overflow-hidden shadow-2xl">
-                <div className="flex items-center justify-between px-4 bg-gradient-to-r from-blue-800 to-blue-900 h-11 rounded-t-xl">
+          {/* Image Showcase */}
+          <div className="w-full mx-auto mt-12 sm:mt-20 text-center md:w-10/12">
+            <div className="relative z-0 w-full mt-6 sm:mt-8">
+              <div className="relative overflow-hidden shadow-2xl rounded-xl">
+                <div className="flex items-center justify-between px-3 sm:px-4 bg-gradient-to-r from-blue-800 to-blue-900 h-9 sm:h-11 rounded-t-xl">
                   <div className="flex space-x-1.5">
-                    <FaCircle className="w-3 h-3 text-white hover:text-gray-300 transition duration-300 transform hover:scale-125" />
-                    <FaCircle className="w-3 h-3 text-white hover:text-gray-300 transition duration-300 transform hover:scale-125" />
-                    <FaCircle className="w-3 h-3 text-white hover:text-gray-300 transition duration-300 transform hover:scale-125" />
+                    <FaCircle className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white hover:text-gray-300 transition duration-300 transform hover:scale-125" />
+                    <FaCircle className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white hover:text-gray-300 transition duration-300 transform hover:scale-125" />
+                    <FaCircle className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white hover:text-gray-300 transition duration-300 transform hover:scale-125" />
                   </div>
                   <FaInfoCircle className="text-white hover:text-gray-300 transition duration-300 transform hover:rotate-45" />
                 </div>
                 <img
-                  className="object-cover py-2 px-4 rounded-b-lg transition duration-300 transform hover:scale-105"
+                  className="object-cover w-full rounded-b-lg transition duration-300 transform hover:scale-105"
                   src={heroSnapshot}
                   alt="Dashboard"
                 />
@@ -134,17 +133,21 @@ function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
       <footer className="bg-white" aria-labelledby="footer-heading">
-        <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24 p-5 flex justify-between">
-          <p className="text-xs leading-5 text-gray-500">
+        <div className="mt-10 sm:mt-16 border-t border-gray-900/10 pt-6 sm:pt-8 px-4 sm:px-6 lg:px-12 flex flex-col sm:flex-row justify-between items-center gap-3">
+          <p className="text-xs sm:text-sm text-gray-500 text-center sm:text-left">
             &copy; 2025 JobSphere. All rights reserved.
           </p>
-          <div>
-            <Button variant="secondary" onClick={handleClick}>
-              <FaGithub className="w-4 h-4 mr-1" />
-              GitHub
-            </Button>
-          </div>
+          <Button
+            variant="secondary"
+            onClick={handleClick}
+            className="w-full sm:w-auto flex items-center justify-center"
+          >
+            <FaGithub className="w-4 h-4 mr-2" />
+            GitHub
+          </Button>
         </div>
       </footer>
     </>

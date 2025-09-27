@@ -11,7 +11,7 @@ function ProjectPreview({ resumeInfo }) {
               color: resumeInfo?.themeColor,
             }}
           >
-            Personal Project
+            Projects
           </h2>
           <hr
             style={{
