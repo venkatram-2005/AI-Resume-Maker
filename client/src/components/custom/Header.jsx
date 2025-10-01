@@ -32,15 +32,6 @@ function Header({ user }) {
     }
   };
 
-  const baseUrl = "https://job-sphere-evolved.vercel.app";
-
-  const navLinks = [
-    { label: "Explore Jobs", href: `${baseUrl}/` },
-    { label: "Create Resume", href: `${baseUrl}/create-resume` },
-    { label: "Resume Analyzer", href: `${baseUrl}/analyzer` },
-    { label: "Past Experiences", href: `${baseUrl}/experiences` },
-  ];
-
   return (
     <div className="flex justify-between px-6 md:px-10 py-5 shadow-md items-center">
       <img 
@@ -50,50 +41,7 @@ function Header({ user }) {
         className="w-35 h-9 cursor-pointer" 
       />
 
-      {/* Desktop Menu */}
-      <div className="hidden md:flex justify-center">
-        <ul className="list-none flex gap-6">
-          {navLinks.map((link, index) => (
-            <li key={index}>
-              <a
-                href={link.href}
-                className="text-black hover:text-gray-500 transition duration-300"
-                target="_top"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* Mobile Menu */}
-      <div className="md:hidden flex items-center">
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="text-black focus:outline-none"
-        >
-          {mobileMenuOpen ? "✖" : "☰"}
-        </button>
-      </div>
-
-      {mobileMenuOpen && (
-        <div className="absolute top-20 left-0 w-full bg-white shadow-md md:hidden z-50">
-          <ul className="flex flex-col gap-4 p-4">
-            {navLinks.map((link, index) => (
-              <li key={index}>
-                <a
-                  href={link.href}
-                  className="text-black hover:text-gray-500 transition duration-300 block"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      
 
       {/* Auth Buttons */}
       <div className="hidden md:flex items-center gap-4">
